@@ -1,5 +1,4 @@
 eclipse.preferences.version=1
-encoding//src-gen/Lexer.java=UTF-8
-encoding//src-gen/NewFile.java=UTF-8
-encoding//src/NewFile.gold=UTF-8
+encoding//src-gen/lexer.java=UTF-8
+encoding//src/lexer.gold=UTF-8
 encoding/<project>=UTF-8
