@@ -5,8 +5,8 @@ procedure main(args:String[]) begin
     Lexer = createTransducer()
 	 testLexer(Lexer)
 end
-  
-        
+  //SERGIO ANDRES GUILLEN FONSECA - 201912757 - sa.guillen - seccion 2
+  // SANTIAGO MORA FELIX -201913351 -s.moraf- seccion 1
 
 procedure testLexer(M:ITransducer) begin
 	var sc:java.util.Scanner(System.$in)
@@ -46,7 +46,7 @@ function createTransducer():ITransducer begin
 	
 	Q:= {"Init","R", "RO", "ROB" ,"ROBO", "ROBOT", "ROBOT_", "ROBOT_R" ,"V", "VA", "VAR", "VARS","B", "BE", "BEG", "BEGI","BEGIN", "E", "EN", "END",
 	"a", "as","ass", "assi","assig", "assign", "d", "di","dir","m","mo","mov","move", "t","tu", "tur","turn","f","fa","fac","face","p","pu", "put",
-	"p","pi","pic","pick","i","in","inD","inDi","inDir", "r","ri","rig", "righ", "right", "l", "le", "lef", "left", "b",
+	"p","pi","pic","pick","i","in","inD","inDi","inDir","D","Di","Dir", "r","ri","rig", "righ", "right", "l", "le", "lef", "left", "b",
 	"ba", "bac", "back", "f", "fr", "fro", "fron", "front", "Num","Nombre","f", "fa", "fac", "faci","facin", "facing","n", "no", "not", "C", "Ch", "Chi", "Chip", "Chips",
 	"B","Ba","Bal","Ball", "Ballo", "Ballon", "Ballons", "n", "no", "nor", "nort", "north", "s", "so", "sou", "sout", "south", "w", "we", "wes", "west","e",
 	"ea", "eas", "east","ERROR"
@@ -121,15 +121,17 @@ function δ(q,σ) begin
 	elseif q="pi" and σ='c'  then return "pic"
 	elseif q="pic" and σ='k'  then return "pick"
 			
-	elseif q="Init" and σ='d'  then return "d"
-	elseif q="d" and σ='i'  then return "di"
-	elseif q="di" and σ='r'  then return "dir"
+	elseif q="Init" and σ='D'  then return "D"
+	elseif q="D" and σ='i'  then return "Di"
+	elseif q="Di" and σ='r'  then return "Dir"
 		
 	elseif q="Init" and σ='i'  then return "i"
 	elseif q="i" and σ='n'  then return "in"
 	elseif q="in" and σ='D'  then return "inD"
 	elseif q="inD" and σ='i'  then return "inDi"
 	elseif q="inDi" and σ='r'  then return "inDir"
+		
+	
 		
 	elseif q="Init" and σ='r'  then return "r"
 	elseif q="r" and σ='i'  then return "ri"
@@ -206,11 +208,10 @@ function δ(q,σ) begin
 	elseif q="Nombre" and σ ∈ ('a' ‥ 'z') then return "Nombre"
 			
 	elseif (q="Nombre" or q="Num" or q="east" or q="west" or q="south" or 
-		q="north" or q="Ballons" or q="Chips" or q="not" or q="canMove:" or
-		q="canPut:" or q="facing" or q="times:" or q="repeat:" or q="do:" or
-		q="while:" or q="else:" or q="then:" or q="if:" or q="front" or q="back" or
-		q= "left" or q="right" or q="inDir" or q="toThe:" or q="pick" or q="of:" or 
-		q="put" or q="face" or  q="turn" or q= "move" or q="to:" or q="assign" or
+		q="north" or q="Ballons" or q="Chips" or q="not" or q="facing" 
+		or q="front" or q="back" or
+		q= "left" or q="right" or q="inDir" or q="Dir" or q="pick" or 
+		q="put" or q="face" or  q="turn" or q= "move" or q="assign" or
 		q="END" or q="BEGIN" or q="VARS" or q="ROBOT_R" or q="(" or q=")" or q="{" or q="}"or 
 		q="[" or q="]" or q=",") and σ ∈ {'\n','\t',' '}
 		then return "Init"
