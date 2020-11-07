@@ -86,7 +86,7 @@ public final class lexer {
       $line=56;
       Object \u03A3=$fix($opUnionY($opUnionY($opUnionY($opIntvlY('0','9'),$opIntvlY('a','z')),$opIntvlY('A','Z')),GCollections.asSet('(',')',' ','_',':',',','[',']','{','}',';')));
       $line=57;
-      Object Out=$fix(GCollections.asSet('R','V','B','A','M','D','T','x','C','O','N','S','E','W','U','t','F','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I','g','u','o','c','v','P','K','$',',','(',')','{','}','[',']','!',';'));
+      Object Out=$fix(GCollections.asSet('R','V','B','A','M','D','T','C','O','N','S','E','W','U','t','F','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I','g','u','o','c','v','P','K','$',',','(',')','{','}','[',']','!',';'));
       $line=58;
       Object q_0=$fix("Init");
       $line=59;
@@ -1241,14 +1241,14 @@ public final class lexer {
                                                     $line=284;
                                                     if ($opEqualY(q,"InDir")) {
                                                       $line=284;
-                                                      $result=$opAdditY("D",s);
+                                                      $result=$opAdditY("I",s);
                                                       if (true) break $try;
                                                     }
                                                     else {
                                                       $line=286;
                                                       if ($opEqualY(q,"Dir")) {
                                                         $line=286;
-                                                        $result=$opAdditY("T",s);
+                                                        $result=$opAdditY("D",s);
                                                         if (true) break $try;
                                                       }
                                                       else {

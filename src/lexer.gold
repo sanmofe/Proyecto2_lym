@@ -54,7 +54,7 @@ function createTransducer():ITransducer begin
 	
 	
 	Σ:=('0'‥'9') ∪ ('a' ‥ 'z') ∪ ('A' ‥ 'Z') ∪ {'(',')',' ', '_' , ':' , ',','[',']','{','}',';'} 
-	Out:={'R','V','B','A','M','D','T','x','C','O','N','S','E','W','U','t','F','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I', 'g','u','o','c','v', 'P','K','$',',','(',')','{','}','[',']','!',';'}
+	Out:={'R','V','B','A','M','D','T','C','O','N','S','E','W','U','t','F','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I', 'g','u','o','c','v', 'P','K','$',',','(',')','{','}','[',']','!',';'}
 	q₀:="Init"
 	F:= {"Init"}∪{"END"}∪{"ERROR"}
 	return 	GDeterministicTransducer(Q,Σ,Out,q₀,F,δ,g,h)
@@ -281,9 +281,9 @@ function h(q,σ) begin
 					
 			elseif q=="move" then return "M"+s
 				
-			elseif q=="InDir" then return "D"+s 
+			elseif q=="InDir" then return "I"+s 
 			
-			elseif q=="Dir" then return "T"+s  
+			elseif q=="Dir" then return "D"+s  
 			
 			elseif q=="turn" then return "T"+s
 				
